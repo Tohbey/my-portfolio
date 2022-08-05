@@ -1,0 +1,47 @@
+@import "./vairable";
+
+.content {
+  grid-row: content-start/content-end;
+  grid-column: 2/12;
+}
+
+.main {
+  display: grid;
+  grid-template-rows:
+    repeat(3, [info-start] minmax(min-content, 63rem) [info-end])
+    [project-start] 50rem [project-end others-start] 63rem [other-end footer-start] 50rem [footer-end];
+}
+
+.background {
+  grid-column: 1/12;
+  grid-row: info-start 1 / info-end 1;
+  border: 1px solid;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  border-radius: 1rem;
+
+  &-header{
+    margin: 1rem 0;
+    &-sub{
+      font-size: 4.3rem;
+      text-transform: capitalize;
+    }
+    &-header{
+      font-size: 5.5rem;
+    }
+    &-small{
+      font-size: 1.8rem;
+      font-weight: lighter;
+    }
+  }
+  &-body{
+    margin: 1rem 0;
+    max-width: 72rem;
+    &-body{
+      font-size: 1.4rem;
+    }
+  }
+}

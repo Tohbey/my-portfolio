@@ -1,0 +1,64 @@
+@import './vairable';
+
+.header{
+ grid-row: header-start/header-end;
+ grid-column: 2/12;
+ padding: 2rem;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ width: 100%;
+ justify-content: space-between;
+
+ .nav{
+  display: flex;
+  width: 49rem;
+  justify-content: space-between;
+  align-items: center;
+
+  ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 36rem;
+
+    .item{
+      padding-right: 5px;
+      padding-left: 5px;
+      text-transform: capitalize;
+      font-family: $font-medium;
+      font-size: 1.3rem;
+      color: whitesmoke;
+      cursor: pointer;
+
+      .num{
+        color: $secondary-color-3;
+      }
+
+      &:hover{
+        color: $secondary-color-3;
+        transition: .8s;
+        border-bottom: 1px $secondary-color-3 solid;
+      }
+    }
+  }
+
+  .btn{
+    color: $secondary-color-3;
+    background-color: transparent;
+    border: 1px solid $secondary-color-3;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: .7s;
+
+    &:hover{
+      outline: none;
+      background-color: rgba($secondary-color-3, 0.2);
+    }
+  }
+ }
+}
