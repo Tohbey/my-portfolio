@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio';
+  workHistory = ["Apple", "Google","Goldman", "Systemspecs", "BrilloConnect", "Exalt", "SystemSpecs"]
 }

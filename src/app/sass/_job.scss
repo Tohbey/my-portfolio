@@ -1,0 +1,18 @@
+#job{
+  grid-column: 2/11;
+  grid-row: info-start 3 / info-end 3;
+  padding: 7rem 22rem;
+
+  .job{
+    &-container{
+      display: flex;
+      justify-content: space-between;
+    }
+    &-left{
+      width: 30%;
+    }
+    &-right{
+      width: 100%;
+    }
+  }
+}
