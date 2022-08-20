@@ -71,14 +71,21 @@
             <section id="job">
               <h2 class="numbered-header">Where I've Worked</h2>
               <div class="job-container">
-                  <!-- <div class="job-left">
-                    <ng-container *ngFor="let work of workHistory">
-                      <p>{{work}}</p>
-                    </ng-container>
+                <ul class="nav nav-tabs job-container-left">
+                  <ng-container *ngFor="let position of workPositions;let i=index">
+                    <li class="nav-item">
+                      <a href="#{{i}}" class="nav-link job-container-tab" data-bs-toggle="tab">{{position.work}}</a>
+                    </li>
+                  </ng-container>
+                </ul>
+                <div class="tab-content">
+                  <ng-container>
+
+                  </ng-container>
+                  <div class="tab-pane show active" id="home">
+                    <p>Home tab content ...</p>
                   </div>
-                  <div class="job-right">
-                    <p>details</p>
-                  </div> -->
+                </div>
                </div>
             </section>
             <section id="projects"></section>

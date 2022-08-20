@@ -1,3 +1,5 @@
+@import "vairable";
+
 #job{
   grid-column: 2/11;
   grid-row: info-start 3 / info-end 3;
@@ -7,12 +9,34 @@
     &-container{
       display: flex;
       justify-content: space-between;
-    }
-    &-left{
-      width: 30%;
-    }
-    &-right{
-      width: 100%;
+
+      &-left{
+        width: 20rem;
+        display: flex;
+        flex-direction: column;
+        border-bottom: none;
+      }
+      &-right{
+        width: 70%;
+        border: 1px solid;
+      }
+
+      &-tab{
+        background-color: transparent;
+        color: $slate;
+        font-size: 14px;
+        padding: 7px 14px;
+        border-left: 2px solid $lightest-navy;
+        border-bottom: none;
+        border-top: none;
+        border-radius: 0;
+        border-right: none;
+      }
     }
   }
 }
+
+//.active{
+//  border-left: 5px solid $secondary-color-3 !important;
+//  color: $secondary-color-3 !important;
+//}
