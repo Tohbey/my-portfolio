@@ -74,16 +74,19 @@
                 <ul class="nav nav-tabs job-container-left">
                   <ng-container *ngFor="let position of workPositions;let i=index">
                     <li class="nav-item">
-                      <a href="#{{i}}" class="nav-link job-container-tab" data-bs-toggle="tab">{{position.work}}</a>
+                      <a class="nav-link job-container-tab" data-bs-toggle="tab" (click)="changeWorkPlace(i)" [ngClass]="{'active': index == i}">{{position.work}}</a>
                     </li>
                   </ng-container>
                 </ul>
-                <div class="tab-content">
-                  <ng-container>
-
-                  </ng-container>
-                  <div class="tab-pane show active" id="home">
-                    <p>Home tab content ...</p>
+                <div class="tab-content job-container-right">
+                  <div class="tab-content job-container-right__box">
+                    <h3>{{currentWorkDetail.position}} <span>@{{currentWorkPlace}}</span></h3>
+                    <p>{{currentWorkDetail.timeSpent}}</p>
+                    <ul class="">
+                      <ng-container *ngFor="let item of currentWorkDetail.workDone">
+                        <li>{{item}}</li>
+                      </ng-container>
+                    </ul>
                   </div>
                 </div>
                </div>

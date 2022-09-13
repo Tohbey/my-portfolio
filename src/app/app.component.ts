@@ -1,13 +1,30 @@
-import { Component } from '@angular/core';
-import {WorkHistory} from "./model/WorkHistory";
+import { Component, OnInit } from '@angular/core';
+import {WorkHistory, WorkDetail} from "./model/WorkHistory";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'portfolio';
+  index!: number;
+  currentWorkDetail!: WorkDetail;
+  currentWorkPlace!: string;
+
+  ngOnInit() {
+    this.index = 0;
+    this.currentWorkDetail = this.workPositions[0].workDetails;
+    this.currentWorkPlace = this.workPositions[0].work
+  }
+
+  changeWorkPlace(i: number){
+    if(i <= this.workPositions.length){
+      this.currentWorkDetail = this.workPositions[i].workDetails;
+      this.currentWorkPlace = this.workPositions[i].work;
+    }
+  }
+
   workPositions:Array<WorkHistory> = [
     {
       work:"Apple",

@@ -15,7 +15,7 @@ p.justify {
   position: relative;
   margin: 10px 0px 10px;
   width: 100%;
-  font-size: 16px;
+  font-size: $font-size-heading;
   white-space: nowrap;
 
   &::before {
@@ -23,7 +23,7 @@ p.justify {
     content: "0" counter(section) ".";
     margin-right: 5px;
     color: $secondary-color-3;
-    font-size: 16px;
+    font-size: $font-size-md;
     font-weight: 400;
   }
 
