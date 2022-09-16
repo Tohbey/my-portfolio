@@ -17,6 +17,7 @@ p.justify {
   width: 100%;
   font-size: $font-size-heading;
   white-space: nowrap;
+  color: $lightest-slate;
 
   &::before {
     counter-increment: section 1;

@@ -8,8 +8,8 @@
 .main {
   display: grid;
   grid-template-rows:
-    repeat(3, [info-start] minmax(min-content, 63rem) [info-end])
-    [project-start] 50rem [project-end others-start] 63rem [other-end footer-start] 50rem [footer-end];
+    repeat(3, [info-start] minmax(min-content, 46rem) [info-end])
+    [project-start] 50rem [project-end footer-start] 50rem [footer-end];
 }
 
 .background {
@@ -30,9 +30,11 @@
     }
     &-header{
       font-size: 5.5rem;
+      color: $lightest-slate;
     }
     &-small{
       font-size: 1.8rem;
+      color: #80FFDB;
       font-weight: lighter;
     }
   }

@@ -1,0 +1,37 @@
+@import "vairable";
+#projects{
+  grid-column: 2/12;
+  grid-row: project-start / project-end;
+  padding: 4rem 20rem;
+
+  .projects{
+    &-container{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 4rem;
+    }
+
+    &-box{
+      border: 1px solid;
+      width: 32rem;
+      height: 30.4rem;
+      padding: 1rem;
+
+      .image{
+        height: 4rem;
+        border: 1px solid;
+      }
+      .body{
+        border: 1px solid;
+        margin: 1rem 0;
+        height: 18rem;
+      }
+      .footer{
+        border: 1px solid;
+        height: 4rem;
+      }
+    }
+  }
+}
