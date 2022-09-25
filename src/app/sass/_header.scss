@@ -21,6 +21,7 @@
       display: flex;
       justify-content: space-between;
       width: 36rem;
+      margin: 0;
 
       .item {
         padding-right: 5px;
@@ -36,24 +37,6 @@
           transition: 0.8s;
           border-bottom: 1px $secondary-color-3 solid;
         }
-      }
-    }
-
-    .btn {
-      color: $secondary-color-3;
-      background-color: transparent;
-      border: 1px solid $secondary-color-3;
-      border-radius: 5px;
-      padding: 0.75rem 1rem;
-      line-height: 1;
-      text-decoration: none;
-      cursor: pointer;
-      font-size: $font-size-xs;
-      transition: 0.7s;
-
-      &:hover {
-        outline: none;
-        background-color: rgba($secondary-color-3, 0.2);
       }
     }
   }

@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {WorkHistory, WorkDetail} from "./model/WorkHistory";
+import { WorkHistory, WorkDetail } from "./model/WorkHistory";
+import { faFolder} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'portfolio';
   index!: number;
   currentWorkDetail!: WorkDetail;
   currentWorkPlace!: string;
+  folderIcon = faFolder;
 
   ngOnInit() {
     this.index = 0;
@@ -18,17 +20,17 @@ export class AppComponent implements OnInit{
     this.currentWorkPlace = this.workPositions[0].work
   }
 
-  changeWorkPlace(i: number){
-    if(i <= this.workPositions.length){
+  changeWorkPlace(i: number) {
+    if (i <= this.workPositions.length) {
       this.currentWorkDetail = this.workPositions[i].workDetails;
       this.currentWorkPlace = this.workPositions[i].work;
     }
   }
 
-  workPositions:Array<WorkHistory> = [
+  workPositions: Array<WorkHistory> = [
     {
-      work:"Apple",
-      workDetails:{
+      work: "Apple",
+      workDetails: {
         position: "Engineer",
         timeSpent: "May-2018 - Present",
         workDone: [
@@ -39,8 +41,8 @@ export class AppComponent implements OnInit{
       }
     },
     {
-      work:"Google",
-      workDetails:{
+      work: "Google",
+      workDetails: {
         position: "Engineer",
         timeSpent: "May-2018 - Present",
         workDone: [
@@ -51,8 +53,8 @@ export class AppComponent implements OnInit{
       }
     },
     {
-      work:"Goldman",
-      workDetails:{
+      work: "Goldman",
+      workDetails: {
         position: "Engineer",
         timeSpent: "May-2018 - Present",
         workDone: [
@@ -63,8 +65,8 @@ export class AppComponent implements OnInit{
       }
     },
     {
-      work:"Systemspecs",
-      workDetails:{
+      work: "Systemspecs",
+      workDetails: {
         position: "Engineer",
         timeSpent: "May-2018 - Present",
         workDone: [
@@ -75,8 +77,8 @@ export class AppComponent implements OnInit{
       }
     },
     {
-      work:"BrilloConnect",
-      workDetails:{
+      work: "BrilloConnect",
+      workDetails: {
         position: "Engineer",
         timeSpent: "May-2018 - Present",
         workDone: [
@@ -87,8 +89,8 @@ export class AppComponent implements OnInit{
       }
     },
     {
-      work:"Systemspecs",
-      workDetails:{
+      work: "Systemspecs",
+      workDetails: {
         position: "Engineer",
         timeSpent: "May-2018 - Present",
         workDone: [

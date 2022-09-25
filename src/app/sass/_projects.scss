@@ -2,7 +2,7 @@
 #projects{
   grid-column: 2/12;
   grid-row: project-start / project-end;
-  padding: 4rem 20rem;
+  padding: 4rem 14rem;
 
   .projects{
     &-container{
@@ -16,21 +16,35 @@
     &-box{
       border: 1px solid;
       width: 32rem;
-      height: 30.4rem;
-      padding: 1rem;
+      height: 29rem;
+      padding: 2rem;
+      border-radius: 13px;
 
       .image{
         height: 4rem;
-        border: 1px solid;
       }
       .body{
-        border: 1px solid;
-        margin: 1rem 0;
-        height: 18rem;
+        margin: 2rem 0;
+        height: 15rem;
+
+        h5{
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $lightest-slate;
+        }
+        p{
+          font-size: 1.2rem;
+        }
       }
       .footer{
-        border: 1px solid;
         height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+          font-size: 1.2rem;
+        }
       }
     }
   }
