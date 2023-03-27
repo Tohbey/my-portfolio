@@ -2,8 +2,12 @@
 
 #job{
   grid-column: 2/11;
-  grid-row: info-start 3 / info-end 3;
   padding: 7rem 22rem;
+
+  @media only screen and (max-width: $laptop-small){
+    padding: 7rem 7rem;
+    grid-column: 2/11;
+  }
 
   .job{
     &-container{
@@ -22,8 +26,9 @@
         padding: .5rem;
 
         &__box{
-          width: 47rem;
-
+          width: 53rem;
+          scroll-behavior: auto;
+          overflow-y: visible;
           h3{
             font-size: 2.2rem;
             color: $lightest-slate;
@@ -37,7 +42,8 @@
           }
 
           ul{
-            overflow: hidden;
+            overflow-x:auto;
+            height: 28rem;
             list-style: none;
             margin: 0;
             padding: 0;

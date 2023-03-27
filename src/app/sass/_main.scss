@@ -59,7 +59,6 @@ body {
   width: 100%;
   overflow: hidden;
   grid-template-columns: repeat(12, minmax(min-content, 14rem));
-  grid-template-rows: [header-start] 7rem [header-end content-start] max-content [content-end]
 }
 
 .dark_mode{

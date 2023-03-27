@@ -2,12 +2,16 @@
 
 #about {
   grid-column: 1/12;
-  grid-row: info-start 2 / info-end 2;
-  padding: 4rem 20rem;
+  padding: 10rem 9rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media only screen and (max-width: $laptop-small){
+    padding: 4rem 7rem;
+    grid-column: 2/9;
+  }
 
   .about {
     &-main {

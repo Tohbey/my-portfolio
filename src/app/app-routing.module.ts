@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  {path:'', redirectTo:'', pathMatch:'full'},
-  {path:'', component: AppComponent}
-];
+const routes: Routes = [];
+
+const routerOptions: ExtraOptions = {
+  useHash: false,
+  anchorScrolling:'enabled'
+}
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

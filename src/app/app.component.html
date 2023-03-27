@@ -4,23 +4,31 @@
     <nav class="nav">
       <ul>
         <ol class="item">
-          <span class="num">01.</span>
-          about
+          <a href="#about">
+            <span class="num">01.</span>
+            about
+          </a>
         </ol>
         <ol class="item">
-          <span class="num">02.</span>
-          experience
+          <a href="#job">
+            <span class="num">02.</span>
+            experience
+          </a>
         </ol>
         <ol class="item">
-          <span class="num">03.</span>
-          work
+          <a href="#projects">
+            <span class="num">03.</span>
+            work
+          </a>
         </ol>
         <ol class="item">
-          <span class="num">04.</span>
-          contact
+          <a href="#footer">
+            <span class="num">04.</span>
+            contact
+          </a>
         </ol>
       </ul>
-      <a class="btn">Resume</a>
+      <a class="btn" href="https://drive.google.com/file/d/1OofriGKF5nnhx6Mq1liTdyeijvyt_9fc/view" target="">Resume</a>
     </nav>
   </header>
   <div class="content">
@@ -47,39 +55,24 @@
           </p>
         </div>
       </section>
-      <section id="about">
+      <section #about id="about">
         <div class="about-main">
           <h2 class="numbered-header">About me</h2>
           <div>
-            <p class="justify">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining
-            </p>
-            <p class="justify">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining.
-            </p>
+            <li>Skilled software developer with at least four years' experience creating a range of apps to address new technical problems.</li>
+            <li>Demonstrated ability to work in rapid environments, building software systems in various organizations, and using multiple languages like Java, Typescript, HTML, CSS/SCSS, Python, React, Angular, Nodejs, and other relevant JavaScript libraries.</li>
+            <li>A track record of successfully picking up new technology and finding technological solutions to problems</li>
             <ul class="about-main-points">
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
-              <li>css</li>
+              <li>CSS/SCSS</li>
+              <li>HTML</li>
+              <li>Angular</li>
+              <li>Node js</li>
+              <li>Java (Spring Boot)</li>
+              <li>Git</li>
+              <li>MongoDB</li>
+              <li>MySql</li>
+              <li>Firebase</li>
+              <li>Docker</li>
             </ul>
           </div>
         </div>
@@ -87,7 +80,7 @@
           <img class="about-image-holder" src="../assets/image.webp" />
         </div>
       </section>
-      <section id="job">
+      <section #job id="job">
         <h2 class="numbered-header">Where I've Worked</h2>
         <div class="job-container">
           <ul class="nav nav-tabs job-container-left">
@@ -119,75 +112,30 @@
           </div>
         </div>
       </section>
-      <section id="projects">
+      <section #projects id="projects">
         <h2 class="numbered-header">Projects</h2>
         <div class="projects-container">
-          <div class="projects-box">
-            <div class="image">
-              <fa-icon [icon]="folderIcon" size="4x"></fa-icon>
+          <ng-container *ngFor="let project of myProjects">
+            <div class="projects-box">
+              <div class="image">
+                <fa-icon [icon]="folderIcon" size="4x"></fa-icon>
+              </div>
+              <div class="body">
+                <h5>{{project.projectName}}</h5>
+                <p>
+                  {{project.projectDescription}}
+                </p>
+              </div>
+              <div class="footer">
+                <ng-container *ngFor="let tech of project.technologies">
+                  <p>{{tech}}</p>
+                </ng-container>
+              </div>
             </div>
-            <div class="body">
-              <h5>E-seating Arrangement System</h5>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining.
-              </p>
-            </div>
-            <div class="footer">
-              <p>Angular</p>
-              <p>Spring boot</p>
-              <p>MySQL</p>
-            </div>
-          </div>
-          <div class="projects-box">
-            <div class="image">
-              <fa-icon [icon]="folderIcon" size="4x"></fa-icon>
-            </div>
-            <div class="body">
-              <h5>Sales Points</h5>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining.
-              </p>
-            </div>
-            <div class="footer">
-              <p>Angular</p>
-              <p>Nodejs</p>
-              <p>Mongo DB</p>
-            </div>
-          </div>
-          <div class="projects-box">
-            <div class="image">
-              <fa-icon [icon]="folderIcon" size="4x"></fa-icon>
-            </div>
-            <div class="body">
-              <h5>Sales Points</h5>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining.
-              </p>
-            </div>
-            <div class="footer">
-              <p>Angular</p>
-              <p>Nodejs</p>
-              <p>Mongo DB</p>
-            </div>
-          </div>
+          </ng-container>
         </div>
       </section>
-      <footer id="footer">
+      <footer #footer id="footer">
         <h2>what's next?</h2>
         <div class="footer-container">
           <h1 class="footer-header">Get In Touch</h1>

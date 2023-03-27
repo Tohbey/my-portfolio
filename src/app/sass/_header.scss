@@ -1,7 +1,6 @@
 @import "./vairable";
 
 .header {
-  grid-row: header-start/header-end;
   grid-column: 2/12;
   padding: 2rem;
   display: flex;
@@ -10,9 +9,19 @@
   width: 100%;
   justify-content: space-between;
 
+  @media only screen and (max-width: $laptop-small){
+    grid-column: 3/10;
+    padding: 2rem 0;
+  }
+
+  @media only screen and (max-width: $tablet-big){
+    grid-column: 3/9;
+    padding: 2rem 0;
+  }
+
   .nav {
     display: flex;
-    width: 49rem;
+    width: 63rem;
     justify-content: space-between;
     align-items: center;
 
@@ -20,7 +29,7 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
-      width: 36rem;
+      width: 51rem;
       margin: 0;
 
       .item {
@@ -31,6 +40,11 @@
         font-size: $font-size-xs;
         color: whitesmoke;
         cursor: pointer;
+
+        a{
+          color: $secondary-color-3;
+          text-decoration: none;
+        }
 
         &:hover {
           color: $secondary-color-3;
