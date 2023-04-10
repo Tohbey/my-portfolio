@@ -1,7 +1,8 @@
-@import "./vairable";
+@import "../scss/vairable";
+@import "../scss/utility";
+
 
 #footer {
-  grid-column: 1/12;
   padding: 12rem 20rem;
   display: flex;
   flex-direction: column;
@@ -11,6 +12,10 @@
   @media only screen and (max-width: $laptop-small){
     padding: 4rem 7rem;
   }
+
+  @media only screen and (max-width: $mobile-large){
+    padding: 9rem 0rem;
+  }
 }
 
 .footer{
@@ -19,6 +24,11 @@
     width: 58rem;
     text-align: center;
     margin: 2rem 1rem;
+
+
+    @media only screen and (max-width: $mobile-large){
+      width: 47rem;
+    }
   }
 
   &-header{

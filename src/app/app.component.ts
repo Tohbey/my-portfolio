@@ -1,24 +1,71 @@
-import { Component, OnInit } from '@angular/core';
-import { WorkHistory, WorkDetail } from "./model/WorkHistory";
+import {Component, Inject, PLATFORM_ID} from '@angular/core';
 import { faFolder} from '@fortawesome/free-regular-svg-icons';
-import { Project } from './model/project.model';
+import {WorkDetail, WorkHistory} from "./model/WorkHistory";
+import {Project} from "./model/project.model";
+import {faGit, faLinkedinIn, faTwitter} from "@fortawesome/free-brands-svg-icons";
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {Title} from "@angular/platform-browser";
+import {DOCUMENT, isPlatformBrowser} from "@angular/common";
+import {ActivatedRoute, NavigationEnd, Router, RouterState} from "@angular/router";
+import {fromEvent, Observable, Subscription} from "rxjs";
+import {AlertService} from "./service/alert.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'portfolio';
+export class AppComponent {
+  title = 'profoilo';
   index!: number;
   currentWorkDetail!: WorkDetail;
   currentWorkPlace!: string;
   folderIcon = faFolder;
+  twitterIcon = faTwitter;
+  mailIcon = faEnvelope;
+  gitIcon = faGit;
+  linkedinIcon = faLinkedinIn;
+  twitter: string = "https://twitter.com/tobeyfafo";
+  mail: string = "mailto:fafoworatobi25@gmail.com";
+  github: string = "https://github.com/Tohbey";
+  linkedin: string = "https://www.linkedin.com/in/fafowora-oluwatobiloba-950091167/";
+  onlineEvent: Observable<Event> | undefined;
+  offlineEvent: Observable<Event> | undefined;
+  subscription = new Subscription();
 
   ngOnInit() {
     this.index = 0;
     this.currentWorkDetail = this.workPositions[0].workDetails;
-    this.currentWorkPlace = this.workPositions[0].work
+    this.currentWorkPlace = this.workPositions[0].work;
+
+    if(isPlatformBrowser(this.platformId)){
+      this.onlineEvent = fromEvent(window, 'online');
+      this.offlineEvent = fromEvent(window, 'offline');
+      console.log(this.onlineEvent)
+      console.log(this.offlineEvent)
+
+      this.subscription.add(
+        this.onlineEvent.subscribe(() => {
+          console.log("online")
+          this.alert.showSuccess('You are back online', 'Connectivity');
+          this.router.navigate(['/'])
+        })
+      )
+
+      this.subscription.add(
+        this.offlineEvent.subscribe(() => {
+          console.log("offline")
+          this.alert.showError('Your device is currently offline', 'Connectivity');
+        })
+      )
+    }
+  }
+
+  constructor(private router: Router, private titleService: Title,
+              @Inject(DOCUMENT) private document:Document,
+              @Inject(PLATFORM_ID) private platformId: Object,
+              private alert: AlertService,) {
+    this.handleRouteEvents();
   }
 
   changeWorkPlace(i: number) {
@@ -28,12 +75,37 @@ export class AppComponent implements OnInit {
     }
   }
 
+  handleRouteEvents() {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const title = this.getTitle(this.router.routerState, this.router.routerState.root).join('-');
+        this.titleService.setTitle(title);
+        gtag('event', 'page_view', {
+          page_title: title,
+          page_path: event.urlAfterRedirects,
+          page_location: this.document.location.href
+        })
+      }
+    });
+  }
+
+  getTitle(state: RouterState, parent: ActivatedRoute): string[] {
+    const data = [];
+    if (parent && parent.snapshot.data && parent.snapshot.data['title']) {
+      data.push(parent.snapshot.data['title']);
+    }
+    if (state && parent && parent.firstChild) {
+      data.push(...this.getTitle(state, parent.firstChild));
+    }
+    return data;
+  }
+
   workPositions: Array<WorkHistory> = [
     {
       work: "HumanManager Limited",
       workDetails: {
         position: "Software Developer",
-        timeSpent: "April-2018 - Present",
+        timeSpent: "April-2022 - Present",
         workDone: [
           "The incorporation of API services from pouchi and wallency for paying utility bills like those for data, electricity, and airtime.",
           "Implementation of split salary payment for HM flex corporate.",
@@ -46,7 +118,9 @@ export class AppComponent implements OnInit {
           "Implementation of KYC update for flex users.",
           "Implementation of single sign-on via Microsoft azure on HM.",
           "Integration of Remita inline for HM flex corporates.",
-          "Implementation of Image/Face capture assistant on HM Flex for new and existing customers."
+          "Implementation of Image/Face capture assistant on HM Flex for new and existing customers.",
+          "Implementation of take a loan process for HM web.",
+          "Implementation of Creation of partner and partner dashboard."
         ]
       }
     },
@@ -80,10 +154,10 @@ export class AppComponent implements OnInit {
         position: "Frontend Developer (Internship)",
         timeSpent: "June-2019 - January-2020",
         workDone: [
-            "I integrated a paystack payment gateway to simplify checkout procedures.",
-            "Implemented Firebase authentication to allow users to sign in with their social media accounts.",
-            "Contributed to the development of a Human Capital solution.",
-            "Worked on the documentation of the software."
+          "I integrated a paystack payment gateway to simplify checkout procedures.",
+          "Implemented Firebase authentication to allow users to sign in with their social media accounts.",
+          "Contributed to the development of a Human Capital solution.",
+          "Worked on the documentation of the software."
         ]
       }
     }

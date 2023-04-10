@@ -1,11 +1,11 @@
-@import './vairable';
+@import 'src/app/scss/vairable';
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 
@@ -46,7 +46,6 @@ html{
   }
 }
 
-
 body {
   font-family: $font-primary;
   margin: 0;
@@ -54,15 +53,8 @@ body {
   counter-reset: section;
 }
 
-.contain{
-  display: grid;
-  width: 100%;
-  overflow: hidden;
-  grid-template-columns: repeat(12, minmax(min-content, 14rem));
-}
-
 .dark_mode{
-  background-color: #0a192f;;
+  background-color: #222f43;
   color: $slate;
 }
 
@@ -72,21 +64,21 @@ body {
 }
 
 @font-face{
-  font-family: 'Poppins-Regular';
-  src: url("../../assets/Poppins/Poppins-Regular.ttf");
+  font-family: 'lato-Regular';
+  src: url("../../assets/Lato/Lato-Regular.ttf");
 }
 
 @font-face{
-  font-family: 'Poppins-Bold';
-  src: url("../../assets/Poppins/Poppins-Bold.ttf");
+  font-family: 'lato-Bold';
+  src: url("../../assets/Lato/Lato-Bold.ttf");
 }
 
-@font-face{
-  font-family: 'Poppins-SemiBold';
-  src: url("../../assets/Poppins/Poppins-SemiBold.ttf");
-}
-
-@font-face{
-  font-family: 'Poppins-Medium';
-  src: url("../../assets/Poppins/Poppins-Medium.ttf");
-}
+//@font-face{
+//  font-family: 'Poppins-SemiBold';
+//  src: url("../../assets/Lato/Lato-Regular.ttf");
+//}
+//
+//@font-face{
+//  font-family: 'Poppins-Medium';
+//  src: url("../../assets/Lato/Lato-Regular.ttf");
+//}

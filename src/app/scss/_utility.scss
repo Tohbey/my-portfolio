@@ -37,31 +37,22 @@ p.justify {
 
 
 .btn {
-  color: $secondary-color-3;
+  color: #80FFDB;
   background-color: transparent;
-  border: 1px solid $secondary-color-3;
-  border-radius: 5px;
-  padding: 0.75rem 1rem;
-  line-height: 1;
+  border: 1px solid #80FFDB;
+  border-radius: 13px;
+  padding: 1.4rem;
+  /* line-height: 1; */
   text-decoration: none;
   cursor: pointer;
-  font-size: $font-size-xs;
+  font-size: 1.3rem;
   transition: 0.7s;
+  display: inline-flex;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 
   &:hover {
     outline: none;
     background-color: rgba($secondary-color-3, 0.2);
   }
-}
-
-.icon-holder{
-  position: sticky;
-  display: flex;
-  flex-direction: column;
-  left: 30px;
-  height: 16rem;
-  width: 3rem;
-  border: 1px solid;
-  justify-content: space-around;
-  align-items: center;
 }
