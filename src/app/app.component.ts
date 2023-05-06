@@ -120,7 +120,9 @@ export class AppComponent {
           "Integration of Remita inline for HM flex corporates.",
           "Implementation of Image/Face capture assistant on HM Flex for new and existing customers.",
           "Implementation of take a loan process for HM web.",
-          "Implementation of Creation of partner and partner dashboard."
+          "Implementation of Creation of partner and partner dashboard.",
+          "Implementation of partner report.",
+          "Bug fixes on African environment.",
         ]
       }
     },
