@@ -1,5 +1,6 @@
 export interface Project{
   projectName: string;
-  projectDescription: string
-  technologies: Array<string>
+  projectDescription: string;
+  technologies?: Array<string>;
+  link?: string;
 }

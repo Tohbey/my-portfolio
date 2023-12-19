@@ -115,8 +115,15 @@
       <div class="d-flex justify-content-around mt-5 flex-wrap" style="row-gap: 3rem">
         <ng-container *ngFor="let project of myProjects">
           <div class="projects-box">
-            <div class="image">
-              <fa-icon [icon]="folderIcon" size="4x"></fa-icon>
+            <div class="d-flex justify-content-between">
+              <div class="image">
+                <fa-icon [icon]="folderIcon" size="4x"></fa-icon>
+              </div>
+              <div class="image">
+                <a [href]="project.link" target="_blank" style="text-decoration:none;color: inherit;">
+                  <fa-icon [icon]="wwwIcon" size="4x"></fa-icon>
+                </a>
+              </div>
             </div>
             <div class="body">
               <h5>{{project.projectName}}</h5>

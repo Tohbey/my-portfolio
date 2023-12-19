@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
-import {faGg} from "@fortawesome/free-brands-svg-icons";
+import {faMicrochip} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +8,7 @@ import {faGg} from "@fortawesome/free-brands-svg-icons";
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  icon= faGg;
+  icon= faMicrochip;
 
   constructor() {
     $(document).ready(function () {

@@ -3,7 +3,7 @@ import { faFolder} from '@fortawesome/free-regular-svg-icons';
 import {WorkDetail, WorkHistory} from "./model/WorkHistory";
 import {Project} from "./model/project.model";
 import {faGit, faLinkedinIn, faTwitter} from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faGlobe} from "@fortawesome/free-solid-svg-icons";
 import {Title} from "@angular/platform-browser";
 import {DOCUMENT, isPlatformBrowser} from "@angular/common";
 import {ActivatedRoute, NavigationEnd, Router, RouterState} from "@angular/router";
@@ -21,11 +21,12 @@ export class AppComponent {
   currentWorkDetail!: WorkDetail;
   currentWorkPlace!: string;
   folderIcon = faFolder;
+  wwwIcon = faGlobe;
   twitterIcon = faTwitter;
   mailIcon = faEnvelope;
   gitIcon = faGit;
   linkedinIcon = faLinkedinIn;
-  twitter: string = "https://twitter.com/tobeyfafo";
+  twitter: string = "https://twitter.com/tobey_fafo";
   mail: string = "mailto:fafoworatobi25@gmail.com";
   github: string = "https://github.com/Tohbey";
   linkedin: string = "https://www.linkedin.com/in/fafowora-oluwatobiloba-950091167/";
@@ -41,8 +42,6 @@ export class AppComponent {
     if(isPlatformBrowser(this.platformId)){
       this.onlineEvent = fromEvent(window, 'online');
       this.offlineEvent = fromEvent(window, 'offline');
-      console.log(this.onlineEvent)
-      console.log(this.offlineEvent)
 
       this.subscription.add(
         this.onlineEvent.subscribe(() => {
@@ -168,23 +167,33 @@ export class AppComponent {
   myProjects: Array<Project> = [
     {
       projectName: "E-seating arrangement system",
-      projectDescription:"In order to prevent students taking the same exam from sitting next to one another, I created a web application that produces seats for an endless number of students in respective faculties.",
-      technologies: ["Java (Spring boot)", "MYSQL", "Angular"]
+      projectDescription:"A web application that generates seating arrangements for an unlimited number of students in "+
+        "their respective faculties, ensuring that students taking the same exam do not sit next to each other. This "+
+        "is particularly important during the COVID-19 pandemic to minimize the risk of virus transmission among students.",
+      technologies: ["Java (Spring boot)", "MYSQL", "Angular"],
+      link: "https://e-seatingarrangment.netlify.app/home"
     },
     {
       projectName: "Sales Point",
-      projectDescription:"When you place an order, a food store application that uses the Stripe API for checkout functionality can assist you in determining how many calories you've consumed each day.",
-      technologies: ["Nodejs", "MongoDB", "Angular"]
+      projectDescription:"A food store application that integrates with the Stripe API to enable users to track their daily " +
+        "caloric intake when placing an order. This feature is intended to help users make informed decisions " +
+        "about their dietary choices and maintain a healthy lifestyle",
+      technologies: ["Nodejs", "MongoDB", "Angular"],
+      link:"https://sales-point.netlify.app/home"
     },
     {
-      projectName: "E-seating arrangement system",
-      projectDescription:"In order to prevent students taking the same exam from sitting next to one another, I created a web application that produces seats for an endless number of students in respective faculties.",
-      technologies: ["Java (Spring boot)", "MYSQL", "Angular"]
+      projectName: "HumanManager",
+      projectDescription:"An all-in-one HR solution that helps organization with all their HR needs such as payroll, leave, " +
+        "staff record, expense, performance and learning management. It is a technology powerhouse specializing in data management, " +
+        "HR, payroll, and employee journey automation",
+      link:"https://humanmanager.net/"
     },
     {
-      projectName: "Sales Point",
-      projectDescription:"When you place an order, a food store application that uses the Stripe API for checkout functionality can assist you in determining how many calories you've consumed each day.",
-      technologies: ["Nodejs", "MongoDB", "Angular"]
+      projectName: "ExaltCourier",
+      projectDescription:"An app that goes where no other logistics app has ever gone before. It offers a seamless way for you to manage all " +
+        "your shipments and more. The mobile application boasts a simple and user friendly interface that makes navigation effortless " +
+        "and user understanding of it’s functions easy.",
+      link: "https://play.google.com/store/apps/details?id=com.userlogistics&hl=en_GB&gl=US&pli=1"
     }
   ]
 }
