@@ -166,7 +166,7 @@ export class AppComponent {
 
   myProjects: Array<Project> = [
     {
-      projectName: "E-seating arrangement system",
+      projectName: "E-seating Arrangement System",
       projectDescription:"A web application that generates seating arrangements for an unlimited number of students in "+
         "their respective faculties, ensuring that students taking the same exam do not sit next to each other. This "+
         "is particularly important during the COVID-19 pandemic to minimize the risk of virus transmission among students.",
